@@ -1,10 +1,8 @@
-Style css
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif; 
 }
 
 body {
@@ -20,6 +18,7 @@ body {
   border-radius: 20px;
   width: 100%;
   max-width: 500px;
+  color: white
 }
 
 .login-container h2 {
@@ -39,7 +38,7 @@ body {
 }
 
 .form-group input {
-  color: #ccc;
+  color: white;
   width: 100%;
   padding: 0.75rem;
   border: 1px solid black;
@@ -97,8 +96,4 @@ body {
 .login-container a {
   color: #2980b9;
   text-decoration: none;
-}
-
-p{
-color: white;
 }
