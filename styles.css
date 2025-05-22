@@ -53,7 +53,8 @@ body {
 }
 
 .senha-container input {
-   width: 100%;
+  color: white;
+  width: 100%;
   padding: 0.75rem;
   border: 1px solid black;
   border-radius: 5px;

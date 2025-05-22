@@ -1,53 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const senhaInput = document.getElementById('senha');
-  const toggleBtn = document.getElementById('toggleSenha' );
+  const senha = document.getElementById('senha');
+  const senha2 = document.getElementById('senha2');
+  const toggleSenha = document.getElementById('toggleSenha');
+  const toggleSenha2 = document.getElementById('toggleSenha2');
+  const form = document.getElementById('formCadastro');
 
-  toggleBtn.addEventListener('click', function (e) {
-    e.preventDefault();
+  toggleSenha.addEventListener('click', function () {
+    senha.type = senha.type === 'password' ? 'text' : 'password';
+    toggleSenha.textContent = senha.type === 'password' ? 'Mostrar' : 'Ocultar';
+  });
 
-    if (senhaInput.type === 'password') {
-      senhaInput.type = 'text';
-      toggleBtn.textContent = 'Ocultar Senha';
-    } else {
-      senhaInput.type = 'password';
-      toggleBtn.textContent = 'Mostrar Senha';
+  toggleSenha2.addEventListener('click', function () {
+    senha2.type = senha2.type === 'password' ? 'text' : 'password';
+    toggleSenha2.textContent = senha2.type === 'password' ? 'Mostrar' : 'Ocultar';
+  });
+
+  form.addEventListener('submit', function (e) {
+    if (senha.value !== senha2.value) {
+      e.preventDefault();
+      alert('As senhas não coincidem!');
     }
   });
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  const senhaInput = document.getElementById('senha2');
-  const toggleBtn = document.getElementById('toggleSenha2' );
-
-  toggleBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    if (senhaInput.type === 'password') {
-      senhaInput.type = 'text';
-      toggleBtn.textContent = 'Ocultar Senha';
-    } else {
-      senhaInput.type = 'password';
-      toggleBtn.textContent = 'Mostrar Senha';
-    }
-  });
-});
-
-document.getElementById('registrarBtn').addEventListener('click', function () {
-  // Aqui você pode validar o formulário primeiro, se quiser
-
-  // Redireciona para a página de login
-  window.location.href = 'index.html';
-});
-
-document.getElementById('registrarBtn').addEventListener('click', function () {
-  const senha1 = document.getElementById('senha1').value;
-  const senha2 = document.getElementById('senha2').value;
-
-  if (senha1 !== senha2) {
-    alert('As senhas não coincidem!');
-    return;
-  }
-
-  // Redireciona se estiver tudo certo
-  window.location.href = 'index.html';
 });
